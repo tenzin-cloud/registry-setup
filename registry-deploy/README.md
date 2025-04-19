@@ -14,7 +14,6 @@ A Terraform configuration workspace to deploy a Docker Hub pull-through cache fo
 |------|---------|
 | <a name="provider_docker"></a> [docker](#provider\_docker) | 3.1.2 |
 | <a name="provider_local"></a> [local](#provider\_local) | 2.5.2 |
-| <a name="provider_random"></a> [random](#provider\_random) | 3.7.1 |
 | <a name="provider_tls"></a> [tls](#provider\_tls) | 4.0.6 |
 
 ## Resources
@@ -28,7 +27,6 @@ A Terraform configuration workspace to deploy a Docker Hub pull-through cache fo
 | [docker_network.service](https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/network) | resource |
 | [docker_volume.registry_data](https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/volume) | resource |
 | [local_file.registry_certificate](https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file) | resource |
-| [random_string.registry](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 | [tls_private_key.registry](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key) | resource |
 | [tls_self_signed_cert.registry](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/self_signed_cert) | resource |
 
