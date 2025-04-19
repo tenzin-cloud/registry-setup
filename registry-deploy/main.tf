@@ -47,11 +47,6 @@ resource "docker_volume" "registry_data" {
   name = "registry_data"
 }
 
-resource "random_string" "registry" {
-  length  = 32
-  special = false
-}
-
 resource "tls_private_key" "registry" {
   algorithm = "RSA"
   rsa_bits  = 4096
