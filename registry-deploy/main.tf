@@ -23,22 +23,6 @@ resource "docker_network" "service" {
   name = "service_network"
 }
 
-resource "docker_image" "cloudflared" {
-  name = "cloudflare/cloudflared:2025.4.0"
-}
-
-resource "docker_container" "cloudflared" {
-  name    = "cloudflared"
-  image   = docker_image.cloudflared.image_id
-  command = ["tunnel", "run", "registry-tenzin-cloud"]
-  env     = ["TUNNEL_TOKEN=${var.cloudflare_tunnel_token}"]
-  restart = "unless-stopped"
-
-  networks_advanced {
-    name = docker_network.service.id
-  }
-}
-
 resource "docker_image" "registry" {
   name = "registry:3.0.0"
 }
@@ -106,7 +90,7 @@ resource "docker_container" "registry" {
         level: "info"
         fields:
           service: "registry"
-          environment: "homelab"
+          environment: "local"
 
       storage:
         cache:
@@ -117,7 +101,7 @@ resource "docker_container" "registry" {
           rootdirectory: "/var/lib/registry"
 
       http:
-        addr: ":443"
+        addr: ":5000"
 
         tls:
           certificate: "/certs/registry.crt"
@@ -138,8 +122,8 @@ resource "docker_container" "registry" {
   }
 
   ports {
-    internal = 443
-    external = 443
+    internal = 5000
+    external = 5000
   }
 
   networks_advanced {
@@ -147,4 +131,3 @@ resource "docker_container" "registry" {
   }
 
 }
-

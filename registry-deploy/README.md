@@ -20,9 +20,7 @@ A Terraform configuration workspace to deploy a Docker Hub pull-through cache fo
 
 | Name | Type |
 |------|------|
-| [docker_container.cloudflared](https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/container) | resource |
 | [docker_container.registry](https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/container) | resource |
-| [docker_image.cloudflared](https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image) | resource |
 | [docker_image.registry](https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/image) | resource |
 | [docker_network.service](https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/network) | resource |
 | [docker_volume.registry_data](https://registry.terraform.io/providers/kreuzwerker/docker/3.1.2/docs/resources/volume) | resource |
@@ -34,8 +32,7 @@ A Terraform configuration workspace to deploy a Docker Hub pull-through cache fo
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_cloudflare_tunnel_token"></a> [cloudflare\_tunnel\_token](#input\_cloudflare\_tunnel\_token) | The Cloudflare tunnel token | `string` | n/a | yes |
-| <a name="input_dockerhub_token"></a> [dockerhub\_token](#input\_dockerhub\_token) | The Docker Hub token | `string` | n/a | yes |
+| <a name="input_dockerhub_token"></a> [dockerhub\_token](#input\_dockerhub\_token) | The Docker Hub token; a read-only token for pull-through cache | `string` | n/a | yes |
 | <a name="input_dockerhub_username"></a> [dockerhub\_username](#input\_dockerhub\_username) | The Docker Hub username | `string` | n/a | yes |
 
 ## Outputs
